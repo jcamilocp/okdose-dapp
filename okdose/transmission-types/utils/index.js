@@ -1,6 +1,6 @@
 /**
  * Gets the translation keys and dosage of the smart contracts.
- * @param {NearInterface} nearInterface Class that allows the connection to a near wallet.
+ * @param {BlockchainInterface} blockchainInterface Class that allows the connection to a near wallet.
  * In the params is set the weight and prescriptionType if apply:
  * @param {number} weight Patient's weight in kg to one decimal point
  * @param {string} prescriptionType Just for Amphotericin B Liposomal.
@@ -11,10 +11,10 @@
  */
 
 const getPrescription = async (
-  nearInterface,
+  blockchainInterface,
   contractName,
   contractMethod,
   params = {}
-) => nearInterface.viewMethod(contractName, contractMethod, params);
+) => blockchainInterface.viewMethod(contractName, contractMethod, params);
 
 export {getPrescription};

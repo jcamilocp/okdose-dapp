@@ -4,9 +4,9 @@ const leishmaniasisMedicines = {
   nMetilGlucamine: {
     name: 'leishmaniasis.n_metil_glucamine.name',
     presentation: 'leishmaniasis.n_metil_glucamine.presentation',
-    prescription: (nearInterface, params = {}) =>
+    prescription: (blockchainInterface, params = {}) =>
       getPrescription(
-        nearInterface,
+        blockchainInterface,
         process.env.NMETIL_CONTRACT,
         process.env.CONTRACT_METHOD,
         params
@@ -15,9 +15,9 @@ const leishmaniasisMedicines = {
   sodiumStibogluconate: {
     name: 'leishmaniasis.sodium_stibogluconate.name',
     presentation: 'leishmaniasis.sodium_stibogluconate.presentation',
-    prescription: (nearInterface, params = {}) =>
+    prescription: (blockchainInterface, params = {}) =>
       getPrescription(
-        nearInterface,
+        blockchainInterface,
         process.env.STIBOGLUCONATE_CONTRACT,
         process.env.CONTRACT_METHOD,
         params
@@ -26,9 +26,9 @@ const leishmaniasisMedicines = {
   pentamidineIsethionate: {
     name: 'leishmaniasis.pentamidine_isethionate.name',
     presentation: 'leishmaniasis.pentamidine_isethionate.presentation',
-    prescription: (nearInterface, params = {}) =>
+    prescription: (blockchainInterface, params = {}) =>
       getPrescription(
-        nearInterface,
+        blockchainInterface,
         process.env.PENTAMIDINE_CONTRACT,
         process.env.CONTRACT_METHOD,
         params
@@ -37,9 +37,9 @@ const leishmaniasisMedicines = {
   miltefosine: {
     name: 'leishmaniasis.miltefosine.name',
     presentation: 'leishmaniasis.miltefosine.presentation',
-    prescription: (nearInterface, params = {}) =>
+    prescription: (blockchainInterface, params = {}) =>
       getPrescription(
-        nearInterface,
+        blockchainInterface,
         process.env.MILTEFOSINE_CONTRACT,
         process.env.CONTRACT_METHOD,
         params
@@ -48,9 +48,9 @@ const leishmaniasisMedicines = {
   amphotericinBliposomal: {
     name: 'leishmaniasis.amphotericin_b_liposomal.name',
     presentation: 'leishmaniasis.amphotericin_b_liposomal.presentation',
-    prescription: (nearInterface, params = {}) =>
+    prescription: (blockchainInterface, params = {}) =>
       getPrescription(
-        nearInterface,
+        blockchainInterface,
         process.env.AMPHOTERICINBLIPOSOMAL_CONTRACT,
         process.env.CONTRACT_METHOD,
         params

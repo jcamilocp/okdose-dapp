@@ -1,23 +1,23 @@
 import * as Leishmaniasis from '../../transmission-types/transmitted-by-vectors/leishmaniasis';
-import NearInterface from '../../../okdose-web/near/nearInterface';
-import {Wallet} from '../../../okdose-web/near/nearWallet';
+import BlockchainInterface from '../../../blockchain-interface';
 import * as dotenv from 'dotenv';
 import {join} from 'path';
 dotenv.config({path: join(__dirname, '../../../', '.env')});
 
 describe('Leishmaniasis smart contract prescription response check', () => {
-  const wallet = new Wallet({createAccessKeyFor: process.env.MAIN_ACCOUNT});
-  let nearInterface;
+
+  const blockchain = new BlockchainInterface({account: process.env.MAIN_ACCOUNT});
+  let blockchainInterface;
   const weight = 100;
 
   beforeEach(async () => {
-    await wallet.startUp();
-    nearInterface = new NearInterface({walletToUse: wallet});
+    await blockchain.wallet.startUp();
+    blockchainInterface = blockchain.interface;
   });
 
   test('It returns the correct properties for N-Metil Glucamine', async () => {
     const dose = await Leishmaniasis.leishmaniasisMedicines.nMetilGlucamine.prescription(
-      nearInterface,
+      blockchainInterface,
       {weight}
     );
 
@@ -34,7 +34,7 @@ describe('Leishmaniasis smart contract prescription response check', () => {
 
   test('It returns the correct properties for Sodium Stibogluconato', async () => {
     const dose = await Leishmaniasis.leishmaniasisMedicines.sodiumStibogluconate.prescription(
-      nearInterface,
+      blockchainInterface,
       weight
     );
 
@@ -51,7 +51,7 @@ describe('Leishmaniasis smart contract prescription response check', () => {
 
   test('It returns the correct properties for Pentamidine Isethionate', async () => {
     const dose = await Leishmaniasis.leishmaniasisMedicines.pentamidineIsethionate.prescription(
-      nearInterface,
+      blockchainInterface,
       weight
     );
 
@@ -71,7 +71,7 @@ describe('Leishmaniasis smart contract prescription response check', () => {
 
   test('It returns the correct properties for Miltefosine', async () => {
     const dose = await Leishmaniasis.leishmaniasisMedicines.miltefosine.prescription(
-      nearInterface,
+      blockchainInterface,
       weight
     );
 
@@ -87,7 +87,7 @@ describe('Leishmaniasis smart contract prescription response check', () => {
 
   test('It returns the correct properties for Amphotericin B Liposomal', async () => {
     const dose = await Leishmaniasis.leishmaniasisMedicines.amphotericinBliposomal.prescription(
-      nearInterface,
+      blockchainInterface,
       weight,
       'LCM2'
     );

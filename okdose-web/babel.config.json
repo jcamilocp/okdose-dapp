@@ -11,9 +11,7 @@
         "extensions": [".js"],
         "alias": {
           "@icons": "./assets/images/icons",
-          "@nearInterface": "../okdose/near/nearInterface",
-          "@nearWallet": "../okdose/near/nearWallet"
-        }
+          "@blockchainInterface": "../blockchainInterface"        }
       }
     ]
   ]

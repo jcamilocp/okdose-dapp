@@ -5,7 +5,7 @@
   "scripts": {
     "start": "cd okdose-web && yarn start",
     "build": "cd okdose-web && yarn build",
-    "postinstall": "cd okdose && yarn install && cd ../ && cd okdose-web && yarn install && cd ../ && cd integration-tests && yarn install",
+    "postinstall": "cd okdose && yarn install && cd ../ && cd okdose-web && yarn install && cd ../ && cd integration-tests && yarn install && cd ../ && cd blockchain-interface && yarn install",
     "lint": "cd okdose && yarn eslint --cache . && cd .. && cd okdose-web && yarn eslint --cache . && cd .. && cd integration-tests && yarn eslint --cache .",
     "lint:fix": "cd okdose && yarn eslint --fix . && cd .. && cd okdose-web && yarn eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,css,json}' --config ./.prettierrc && yarn lint:fix",
